@@ -23,6 +23,10 @@ export default function Profile() {
         })
     }, [ongId])
 
+    function formatCurrency(value) {
+        return Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
+    }
+
 
     return (
         <div className="profile-container">
@@ -46,7 +50,7 @@ export default function Profile() {
                         <p>{incident.description}</p>
 
                         <strong>VALOR:</strong>
-                        <p>{incident.value}</p>
+                        <p>{formatCurrency(incident.value)}</p>
                         <button type="button">
                             <FiTrash2 size={20} color="#A8A8B3"></FiTrash2>
                         </button>
