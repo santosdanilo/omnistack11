@@ -27,6 +27,17 @@ export default function Profile() {
         return Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
     }
 
+    async function handleDeleteIncident(id) {
+        try {
+            api.delete(`incidents/${id}`, {
+                headers: {
+                    Authorization: ongId
+                }
+            })
+        } catch (error) {
+            alert('Erro ao deletar caso. Tente novamente')
+        }
+    }
 
     return (
         <div className="profile-container">
@@ -51,7 +62,7 @@ export default function Profile() {
 
                         <strong>VALOR:</strong>
                         <p>{formatCurrency(incident.value)}</p>
-                        <button type="button">
+                        <button onClick={e => handleDeleteIncident(incident.id)} type="button">
                             <FiTrash2 size={20} color="#A8A8B3"></FiTrash2>
                         </button>
                     </li>
