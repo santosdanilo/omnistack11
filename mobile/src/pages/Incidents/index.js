@@ -42,7 +42,7 @@ export default function Incidents() {
                         <Text style={styles.incidentValue}>R# 120,00</Text>
 
                         <TouchableOpacity
-                            styles={styles.detailsButton}
+                            style={styles.detailsButton}
                             onPress={navigatoToDetail}>
                             <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
                             <Feather name="arrow-right" size={16} color="#E02041" />

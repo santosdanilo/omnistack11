@@ -57,7 +57,7 @@ export default StyleSheet.create({
         borderRadius: 8,
         height: 50,
         width: '48%',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center'
     },
     actionText: {
